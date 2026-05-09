@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.11" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.11"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.11" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.11">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.11" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.11" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.15.0" />
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="9.0.6" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.15.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Companies\Application\EventHandlers\" />
+      <Folder Include="Companies\Domain\Repositories\" />
+      <Folder Include="IAM\Infrastructure\Pipeline\Middleware\Attributes\" />
+      <Folder Include="IAM\Infrastructure\Pipeline\Middleware\Components\" />
+      <Folder Include="IAM\Infrastructure\Pipeline\Middleware\Extensions\" />
+      <Folder Include="IAM\Interfaces\ACL\" />
+      <Folder Include="IAM\Interfaces\REST\Transform\" />
+      <Folder Include="Routes\Application\Internal\EventHandlers\" />
+      <Folder Include="Shared\Infrastructure\Interfaces\Mediator\Cortex\Configuration\" />
+    </ItemGroup>
+
+</Project>
