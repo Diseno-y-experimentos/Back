@@ -28,7 +28,7 @@ namespace BusTrackBackEnd.API.BoundedContexts.Transport.Infrastructure.Persisten
 
         public async Task<Bus> GetByLicensePlateAsync(string licensePlate)
         {
-            return await _context.Set<Bus>().FirstOrDefaultAsync(b => b.LicensePlate == licensePlate);
+            return await _context.Set<Bus>().FirstOrDefaultAsync(b => b.Plate == licensePlate);
         }
 
         public async Task AddAsync(Bus bus)

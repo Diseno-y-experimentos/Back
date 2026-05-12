@@ -2,8 +2,9 @@
 {
     public class CreateBusResource
     {
-        public string LicensePlate { get; set; }
-        public int Capacity { get; set; }
-        public string CurrentLocation { get; set; }
+        public string Plate { get; set; }
+        public string Route { get; set; }
+        public string Status { get; set; }
+        public string Driver { get; set; }
     }
 }

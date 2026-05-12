@@ -7,7 +7,7 @@ using BusTrackBackEnd.API.BoundedContexts.Transport.Application.Internal.Service
 namespace BusTrackBackEnd.API.BoundedContexts.Transport.Interfaces.REST
 {
     [ApiController]
-    [Route("api/v1/vehicles")]
+    [Route("api/v1/buses")]
     public class BusesController : ControllerBase
     {
         private readonly IBusService _busService;
@@ -30,7 +30,7 @@ namespace BusTrackBackEnd.API.BoundedContexts.Transport.Interfaces.REST
             var bus = await _busService.GetByIdAsync(id);
             if (bus == null)
             {
-                return NotFound();
+                return NotFound(new { message = "Bus not found" });
             }
             return Ok(bus);
         }
@@ -46,12 +46,44 @@ namespace BusTrackBackEnd.API.BoundedContexts.Transport.Interfaces.REST
             try
             {
                 var bus = await _busService.CreateAsync(resource);
-                // Return 201 Created and the location header
                 return CreatedAtAction(nameof(GetBusById), new { id = bus.Id }, bus);
             }
             catch (System.Exception ex)
             {
-                return BadRequest(new { Message = ex.Message });
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateBus(int id, [FromBody] CreateBusResource resource)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var bus = await _busService.UpdateAsync(id, resource);
+                return Ok(bus);
+            }
+            catch (System.Exception ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBus(int id)
+        {
+            try
+            {
+                await _busService.DeleteAsync(id);
+                return NoContent();
+            }
+            catch (System.Exception ex)
+            {
+                return NotFound(new { message = ex.Message });
             }
         }
     }

@@ -28,6 +28,11 @@ using BusTrackBackEnd.API.Companies.Domain.Services;
 using BusTrackBackEnd.API.Companies.Application.CommandServices;
 using BusTrackBackEnd.API.Companies.Application.QueryServices;
 
+// --- TRANSPORT USINGS ---
+using BusTrackBackEnd.API.BoundedContexts.Transport.Domain.Repositories;
+using BusTrackBackEnd.API.BoundedContexts.Transport.Infrastructure.Persistence;
+using BusTrackBackEnd.API.BoundedContexts.Transport.Application.Internal.Services;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -107,6 +112,10 @@ builder.Services.AddScoped<IRouteQueryService, RouteQueryService>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<ICompanyCommandService, CompanyCommandService>();
 builder.Services.AddScoped<ICompanyQueryService, CompanyQueryService>();
+
+// --- Transport Bounded Context ---
+builder.Services.AddScoped<IBusRepository, BusRepository>();
+builder.Services.AddScoped<IBusService, BusService>();
 
 
 var app = builder.Build();

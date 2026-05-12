@@ -7,6 +7,7 @@ using BusTrackBackEnd.API.BoundedContexts.Users.Domain.Model.Aggregates;
 using BusTrackBackEnd.API.Routes.Domain.Model.Entities;
 using BusTrackBackEnd.API.Routes.Infrastructure.Persistence.EFC.Configuration.Extensions;
 using BusTrackBackEnd.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
+using BusTrackBackEnd.API.BoundedContexts.Transport.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using Route = BusTrackBackEnd.API.Routes.Domain.Model.Aggregates.Route;
 
@@ -25,6 +26,9 @@ public class AppDbContext : DbContext
     // Routes
     public DbSet<Route> Routes { get; set; }
     public DbSet<Waypoint> Waypoints { get; set; }
+
+    // Transport
+    public DbSet<Bus> Buses { get; set; }
 
     // User interactions
     public DbSet<SavedRoute> SavedRoutes { get; set; }

@@ -5,36 +5,32 @@ namespace BusTrackBackEnd.API.BoundedContexts.Transport.Domain.Model
     public class Bus
     {
         public int Id { get; private set; }
-        public string LicensePlate { get; private set; }
-        public int Capacity { get; private set; }
-        public string CurrentLocation { get; private set; }
-        public BusStatus Status { get; private set; }
-        public int? CurrentRouteId { get; private set; }
+        public string Plate { get; private set; }
+        public string Route { get; private set; }
+        public string Status { get; private set; }
+        public string Driver { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+        public DateTime UpdatedAt { get; private set; }
 
-        protected Bus() { } // Para EF Core
+        protected Bus() { }
 
-        public Bus(string licensePlate, int capacity, string currentLocation)
+        public Bus(string plate, string route, string status, string driver)
         {
-            LicensePlate = licensePlate ?? throw new ArgumentNullException(nameof(licensePlate));
-            Capacity = capacity > 0 ? capacity : throw new ArgumentException("Capacity must be greater than 0");
-            CurrentLocation = currentLocation ?? throw new ArgumentNullException(nameof(currentLocation));
-            Status = BusStatus.INACTIVE;
+            Plate = plate ?? throw new ArgumentNullException(nameof(plate));
+            Route = route ?? throw new ArgumentNullException(nameof(route));
+            Status = status ?? "inactive";
+            Driver = driver ?? throw new ArgumentNullException(nameof(driver));
+            CreatedAt = DateTime.UtcNow;
+            UpdatedAt = DateTime.UtcNow;
         }
 
-        public void UpdateLocation(string location)
+        public void Update(string plate, string route, string status, string driver)
         {
-            CurrentLocation = location ?? throw new ArgumentNullException(nameof(location));
-        }
-
-        public void ChangeStatus(BusStatus status)
-        {
-            Status = status;
-        }
-
-        public void AssignRoute(int routeId)
-        {
-            CurrentRouteId = routeId;
-            Status = BusStatus.ACTIVE;
+            Plate = plate ?? Plate;
+            Route = route ?? Route;
+            Status = status ?? Status;
+            Driver = driver ?? Driver;
+            UpdatedAt = DateTime.UtcNow;
         }
     }
 }
