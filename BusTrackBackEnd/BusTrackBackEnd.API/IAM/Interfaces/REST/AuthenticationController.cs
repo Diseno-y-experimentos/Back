@@ -2,6 +2,7 @@
 using BusTrackBackEnd.API.IAM.Interfaces.REST.Resources;
 using BusTrackBackEnd.API.IAM.Domain.Repositories;
 using BusTrackBackEnd.API.IAM.Application.Internal.OutboundServices;
+using BusTrackBackEnd.API.Companies.Domain.Model.Aggregates;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,15 +15,18 @@ public class AuthenticationController : ControllerBase
 {
     private readonly IUserCommandService _commandService;
     private readonly IUserRepository _userRepository;
+    private readonly ICompanyRepository _companyRepository;
     private readonly ITokenService _tokenService;
 
     public AuthenticationController(
         IUserCommandService commandService,
         IUserRepository userRepository,
+        ICompanyRepository companyRepository,
         ITokenService tokenService)
     {
         _commandService = commandService;
         _userRepository = userRepository;
+        _companyRepository = companyRepository;
         _tokenService = tokenService;
     }
 
@@ -60,6 +64,17 @@ public class AuthenticationController : ControllerBase
     {
         if (!TryGetCurrentUserId(out var userId))
             return Unauthorized(new { message = "Invalid token" });
+
+        var accountType = User.Claims.FirstOrDefault(c => c.Type == "account_type")?.Value ?? "user";
+
+        if (accountType == "company")
+        {
+            var company = await _companyRepository.FindByIdAsync(userId);
+            if (company == null)
+                return NotFound(new { message = "Company not found" });
+
+            return Ok(new { token = _tokenService.GenerateToken(company) });
+        }
 
         var user = await _userRepository.FindByIdAsync(userId);
         if (user == null)

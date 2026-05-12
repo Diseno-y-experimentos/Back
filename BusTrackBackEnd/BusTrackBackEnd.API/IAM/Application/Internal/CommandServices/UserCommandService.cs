@@ -1,4 +1,5 @@
 ﻿using BusTrackBackEnd.API.IAM.Application.Internal.OutboundServices;
+using BusTrackBackEnd.API.Companies.Domain.Model.Aggregates;
 using BusTrackBackEnd.API.IAM.Domain.Model.Aggregates;
 using BusTrackBackEnd.API.IAM.Domain.Repositories;
 using BusTrackBackEnd.API.IAM.Domain.Model.Commands;
@@ -10,14 +11,19 @@ namespace BusTrackBackEnd.API.IAM.Application.Internal.CommandServices;
 public class UserCommandService : IUserCommandService
 {
     private readonly IUserRepository _repository;
+    private readonly ICompanyRepository _companyRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IHashingService _hashingService;
     private readonly ITokenService _tokenService;
 
-    public UserCommandService(IUserRepository repository, IUnitOfWork unitOfWork,
-        IHashingService hashingService, ITokenService tokenService)
+    public UserCommandService(IUserRepository repository,
+        ICompanyRepository companyRepository,
+        IUnitOfWork unitOfWork,
+        IHashingService hashingService,
+        ITokenService tokenService)
     {
         _repository = repository;
+        _companyRepository = companyRepository;
         _unitOfWork = unitOfWork;
         _hashingService = hashingService;
         _tokenService = tokenService;
@@ -38,11 +44,17 @@ public class UserCommandService : IUserCommandService
     public async Task<string> SignInAsync(SignInCommand command)
     {
         var user = await _repository.FindByUsernameOrEmailAsync(command.Username);
-        if (user == null) throw new UnauthorizedAccessException("Invalid username or password");
+        if (user != null)
+        {
+            var passwordValid = _hashingService.VerifyPassword(command.Password, user.PasswordHash);
+            if (passwordValid)
+                return _tokenService.GenerateToken(user);
+        }
 
-        var passwordValid = _hashingService.VerifyPassword(command.Password, user.PasswordHash);
-        if (!passwordValid) throw new UnauthorizedAccessException("Invalid username or password");
+        var company = await _companyRepository.FindByEmailAsync(command.Username);
+        if (company != null)
+            return _tokenService.GenerateToken(company);
 
-        return _tokenService.GenerateToken(user);
+        throw new UnauthorizedAccessException("Invalid username or password");
     }
 }
