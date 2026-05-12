@@ -24,5 +24,15 @@ public class Company
         UpdatedAt = DateTime.UtcNow;
     }
 
+    public void UpdateDetails(string name, string email, string ruc, string phone, string address)
+    {
+        Name = name;
+        Email = email;
+        Ruc = ruc;
+        Phone = phone;
+        Address = address;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
     protected Company() {}
 }

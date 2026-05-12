@@ -22,5 +22,18 @@ public class User
         UpdatedAt = DateTime.UtcNow;
     }
 
+    public void UpdateProfile(string username, string email, string? passwordHash = null)
+    {
+        Username = username;
+        Email = email;
+
+        if (!string.IsNullOrWhiteSpace(passwordHash))
+        {
+            PasswordHash = passwordHash;
+        }
+
+        UpdatedAt = DateTime.UtcNow;
+    }
+
     protected User() {}
 }

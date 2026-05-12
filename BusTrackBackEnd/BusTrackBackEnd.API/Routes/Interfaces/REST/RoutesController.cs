@@ -11,6 +11,7 @@ namespace BusTrackBackEnd.API.Routes.Interfaces.REST;
 
 [ApiController]
 [Route("api/v1/routes")]
+[Route("routes")]
 public class RoutesController : ControllerBase
 {
     private readonly IRouteCommandService _commandService;

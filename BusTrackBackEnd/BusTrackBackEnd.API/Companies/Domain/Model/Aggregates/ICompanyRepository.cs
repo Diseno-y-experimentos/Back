@@ -6,4 +6,5 @@ public interface ICompanyRepository
     Task<Company?> FindByIdAsync(int id);
     Task<Company?> FindByEmailAsync(string email);
     Task<IEnumerable<Company>> ListAsync();
+    void Update(Company company);
 }

@@ -30,7 +30,6 @@ using BusTrackBackEnd.API.Companies.Application.QueryServices;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using IUserRepository = BusTrackBackEnd.API.IAM.Domain.Repositories.IUserRepository; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -127,12 +126,15 @@ app.UseSwaggerUI(options =>
     options.RoutePrefix = string.Empty; 
 });
 
-
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 // Activamos CORS antes de la autorización
 app.UseCors("AllowAll");
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
