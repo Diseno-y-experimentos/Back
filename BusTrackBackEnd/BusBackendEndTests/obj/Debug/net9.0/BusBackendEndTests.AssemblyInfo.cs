@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BusBackendEndTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77f104b514fa0b24c51dd1aad49585177ceed20b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cf86b12fdf576471be9571d8a4f889ff0c61d00")]
 [assembly: System.Reflection.AssemblyProductAttribute("BusBackendEndTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BusBackendEndTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
