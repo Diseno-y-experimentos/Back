@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joaqu\\Desktop\\DEWALTER\\Ultimo-Back-main\\Ultimo-Back-main\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj": {}
+    "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joaqu\\Desktop\\DEWALTER\\Ultimo-Back-main\\Ultimo-Back-main\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj": {
+    "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\Ultimo-Back-main\\Ultimo-Back-main\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj",
+        "projectUniqueName": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj",
         "projectName": "BusTrackBackEnd.API",
-        "projectPath": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\Ultimo-Back-main\\Ultimo-Back-main\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj",
+        "projectPath": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj",
         "packagesPath": "C:\\Users\\joaqu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\Ultimo-Back-main\\Ultimo-Back-main\\BusTrackBackEnd\\BusTrackBackEnd.API\\obj\\",
+        "outputPath": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joaqu\\AppData\\Roaming\\NuGet\\NuGet.Config",

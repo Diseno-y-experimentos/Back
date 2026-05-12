@@ -14,6 +14,10 @@ public class UserRepository : BaseRepository<User>, IUserRepository
     public async Task<User?> FindByUsernameAsync(string username)
         => await Context.Set<User>().FirstOrDefaultAsync(x => x.Username == username);
 
+    public async Task<User?> FindByUsernameOrEmailAsync(string usernameOrEmail)
+        => await Context.Set<User>().FirstOrDefaultAsync(x =>
+            x.Username == usernameOrEmail || x.Email == usernameOrEmail);
+
     // 2. CORRECCIÓN: Agregamos este método que pide tu nueva interfaz
     public bool ExistsByUsername(string username)
     {

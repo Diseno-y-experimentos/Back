@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WuvT9tNSOt8=",
+  "dgSpecHash": "ZsGW7O51AqE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\Ultimo-Back-main\\Ultimo-Back-main\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj",
+  "projectFilePath": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaqu\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\joaqu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
