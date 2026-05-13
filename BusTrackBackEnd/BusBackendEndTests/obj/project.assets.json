@@ -2684,19 +2684,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USUARIO\\.nuget\\packages\\": {}
+    "C:\\Users\\joaqu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USUARIO\\Downloads\\Backendddd\\Back\\BusTrackBackEnd\\BusBackendEndTests\\BusBackendEndTests.csproj",
+      "projectUniqueName": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusBackendEndTests\\BusBackendEndTests.csproj",
       "projectName": "BusBackendEndTests",
-      "projectPath": "C:\\Users\\USUARIO\\Downloads\\Backendddd\\Back\\BusTrackBackEnd\\BusBackendEndTests\\BusBackendEndTests.csproj",
-      "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USUARIO\\Downloads\\Backendddd\\Back\\BusTrackBackEnd\\BusBackendEndTests\\obj\\",
+      "projectPath": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusBackendEndTests\\BusBackendEndTests.csproj",
+      "packagesPath": "C:\\Users\\joaqu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusBackendEndTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joaqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2710,8 +2710,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\USUARIO\\Downloads\\Backendddd\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj": {
-              "projectPath": "C:\\Users\\USUARIO\\Downloads\\Backendddd\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj"
+            "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj": {
+              "projectPath": "C:\\Users\\joaqu\\Desktop\\DEWALTER\\repoback\\Back\\BusTrackBackEnd\\BusTrackBackEnd.API\\BusTrackBackEnd.API.csproj"
             }
           }
         }
@@ -2769,7 +2769,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\joaqu\\.dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
