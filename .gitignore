@@ -1,0 +1,19 @@
+# Ignorar los archivos de configuración de Git
+.git/
+
+# Ignorar archivos y carpetas de JetBrains (Rider/IntelliJ)
+.idea/
+
+# Ignorar las carpetas generadas de .NET
+**/obj/
+**/bin/
+
+# Si tienes alguna otra carpeta que se genera al compilar, como archivos temporales o de caché
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Ignorar archivos específicos en directorios
+BusTrackBackEnd/BusTrackBackEnd.API/obj/
+BusTrackBackEnd/BusTrackBackEnd.API/bin/
