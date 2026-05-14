@@ -1,0 +1,53 @@
+# Carpetas de compilación .NET
+bin/
+obj/
+
+# Archivos de pruebas / cobertura
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.trx
+*.opencover.xml
+*.cobertura.xml
+
+# Cobertura específica de Coverlet / MS
+.msCoverageSourceRootsMapping_*
+CoverletSourceRootsMapping_*
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.rsuser
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db# Carpetas de compilación .NET
+bin/
+obj/
+
+# Archivos de pruebas / cobertura
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.trx
+*.opencover.xml
+*.cobertura.xml
+
+# Cobertura específica de Coverlet / MS
+.msCoverageSourceRootsMapping_*
+CoverletSourceRootsMapping_*
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.rsuser
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
